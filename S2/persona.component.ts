@@ -104,4 +104,9 @@ export class PersonaComponent implements OnInit {
   }
 
   get f() { return this.personaForm.controls;}
+  
+  openModalPersona(){    
+    this.personaForm.reset();    
+    $("#personaModal").modal("show");  
+  }
 }
