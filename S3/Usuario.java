@@ -19,7 +19,7 @@ public class Usuario {
 	@Size(min=2, message="El password debe tener al menos 8 caracteres")
 	private String password;
 	
-	private Integer tipo_usuaro;
+	private Integer tipo_usuario;
 	
 	public Usuario() {
 		
