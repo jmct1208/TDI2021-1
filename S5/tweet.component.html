@@ -1,0 +1,112 @@
+<div class="container-fluid">
+    <div class="card mb-3">
+
+        <!-- Header  -->
+        <div class="card-header">
+            <h3><i class="fas fa-comment-alt"></i>&nbsp;&nbsp;Tweets</h3>
+            <button style="float: right;" type="button" *ngIf="personaSeleccionada!=0" (click)="openModalTweet()" class="btn btn-info btn-sm"> Agregar Tweet <i class="fas fa-comment-alt"></i>
+            </button>
+        </div>
+
+        <!-- Body  -->
+        <!-- <div class="card-body">
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th class="text-center">Persona</th>
+                        <th class="text-center">Tweet</th>
+                        <th class="text-center">Imagen</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let persona of personas">
+                    <tr *ngFor="let tweet of persona.tweets">
+                        <td class="text-center">{{ persona.nombre + " " + persona.apellidos}}</td>
+                        <td class="text-center">{{ tweet.descripcion }}</td>
+                        <td class="text-center">
+                            <img src="{{tweet.imagen}}" width="50" height="50">
+                        </td>
+
+                        <td>
+                            <div>
+                                <button (click)="updateTweet(tweet)" type="button" class="btn btn-primary">Editar <i class="fas fa-edit"></i></button>
+                                &nbsp;&nbsp;
+                                <button (click)="deleteTweet(tweet.id)" type="button" class="btn btn-danger">Eliminar <i class="fas fa-trash"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div> -->
+
+        <br>
+        <div class="form-group row text-center">
+            <label for="colFormLabel" class="col-sm-2 col-form-labeñ">Persona:</label>
+            <div class="col-sm-6">
+                <select class="form-control" [(ngModel)]="personaSeleccionada" (change)="getPersonaTweets(personaSeleccionada)" name="personaSeleccionada" id="personaSeleccionada">
+                    <option [ngValue]="undefined" hidden>Seleciona una persona...</option>
+                    <option *ngFor="let persona of personas" [ngValue]="persona.id">{{ persona.nombre + " " + persona.apellidos}}</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div class="row">
+                <div class="card card-tweet" style="width: 18rem;" *ngFor="let tweet of tweets">
+                    <img class="center-img" src="{{tweet.imagen}}" width="150" height="150">
+                    <div class="card-body">
+                        <p class="card-text">{{tweet.descripcion}}</p>
+                        <button (click)="updateTweet(tweet)" type="button" class="btn btn-primary">Editar <i class="fas fa-edit"></i></button>
+                        &nbsp;&nbsp;
+                        <button (click)="deleteTweet(tweet.id, personaSeleccionada)" type="button" class="btn btn-danger">Eliminar <i class="fas fa-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<br><br>
+
+<div class="modal" id="tweetModal">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h4 class="modal-title">Agregar tweet</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <div class="modal-body">
+                <form [formGroup]="tweetForm" (ngSubmit)="createTweet()">
+                    
+                    <div class="form-group">
+                        <label for="descripcion">Descripción<span class="text-danger">*</span></label>
+                        <textarea rows="3" formControlName="descripcion" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.descripcion.errors }"></textarea>
+                        <div *ngIf="submitted && f.descripcion.errors" class="invalid-feedback">
+                        <div *ngIf="f.descripcion.errors.required">La descripción es obligatoria</div>
+                        </div>
+                    </div>
+            
+                    <label for="imagen">Imagen<span class="text-danger">*</span></label>
+                    <div class="custom-file">
+                        <input type="file" accept="image/*" class="custom-file-input" (change)=imagenSelected($event)>
+                        <label class="custom-file-label" for="customFile">Selecciona una imagen...</label>
+                    </div>
+                    <br><br>
+
+                    <p class="text-right"><span class="text-danger">*</span> Campos requeridos</p>
+                    <div>
+                        <button class="btn btn-success btn-block">Guardar</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+            </div>
+        
+        </div>
+    </div>
+</div>
