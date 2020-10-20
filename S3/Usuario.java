@@ -19,7 +19,7 @@ public class Usuario {
 	@Size(min=2, message="El password debe tener al menos 8 caracteres")
 	private String password;
 	
-	private Integer tipo_usuaro;
+	private Integer tipo_usuario;
 	
 	public Usuario() {
 		
@@ -27,12 +27,12 @@ public class Usuario {
 
 	public Usuario(Integer id, @Size(min = 2, message = "El usuario debe tener al menos 2 caracteres") String usuario,
 			@Size(min = 2, message = "El password debe tener al menos 8 caracteres") String password,
-			Integer tipo_usuaro) {
+			Integer tipo_usuario) {
 		super();
 		this.id = id;
 		this.usuario = usuario;
 		this.password = password;
-		this.tipo_usuaro = tipo_usuaro;
+		this.tipo_usuario = tipo_usuario;
 	}
 
 	public Integer getId() {
@@ -59,18 +59,20 @@ public class Usuario {
 		this.password = password;
 	}
 
-	public Integer getTipo_usuaro() {
-		return tipo_usuaro;
+	public Integer getTipo_usuario() {
+		return tipo_usuario;
 	}
 
-	public void setTipo_usuaro(Integer tipo_usuaro) {
-		this.tipo_usuaro = tipo_usuaro;
+	public void setTipo_usuario(Integer tipo_usuario) {
+		this.tipo_usuario = tipo_usuario;
 	}
 
 	@Override
 	public String toString() {
-		return "Usuario [id=" + id + ", usuario=" + usuario + ", password=" + password + ", tipo_usuaro=" + tipo_usuaro
-				+ "]";
+		return "Usuario [id=" + id + ", usuario=" + usuario + ", password=" + password + ", tipo_usuario="
+				+ tipo_usuario + "]";
 	}
+
+	
 
 }
