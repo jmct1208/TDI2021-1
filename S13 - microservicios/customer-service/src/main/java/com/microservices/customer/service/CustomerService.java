@@ -2,8 +2,8 @@ package com.microservices.customer.service;
 
 import java.util.List;
 
-import com.microservices.customer.repository.entity.Customer;
-import com.microservices.customer.repository.entity.Region;
+import com.microservices.customer.entity.Customer;
+import com.microservices.customer.entity.Region;
 
 public interface CustomerService {
 

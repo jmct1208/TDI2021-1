@@ -2,8 +2,8 @@ package com.microservices.customer.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.microservices.customer.repository.entity.Customer;
-import com.microservices.customer.repository.entity.Region;
+import com.microservices.customer.entity.Customer;
+import com.microservices.customer.entity.Region;
 
 import java.util.List;
 

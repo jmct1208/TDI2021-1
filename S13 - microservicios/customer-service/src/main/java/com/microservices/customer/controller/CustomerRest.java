@@ -2,8 +2,8 @@ package com.microservices.customer.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.microservices.customer.repository.entity.Customer;
-import com.microservices.customer.repository.entity.Region;
+import com.microservices.customer.entity.Customer;
+import com.microservices.customer.entity.Region;
 import com.microservices.customer.service.CustomerService;
 
 import lombok.extern.slf4j.Slf4j;

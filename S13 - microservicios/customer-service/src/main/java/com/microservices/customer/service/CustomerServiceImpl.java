@@ -5,8 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.microservices.customer.repository.CustomerRepository;
-import com.microservices.customer.repository.entity.Customer;
-import com.microservices.customer.repository.entity.Region;
+import com.microservices.customer.entity.Customer;
+import com.microservices.customer.entity.Region;
 
 import java.util.List;
 @Slf4j

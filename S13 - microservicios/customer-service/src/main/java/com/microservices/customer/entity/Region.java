@@ -1,4 +1,4 @@
-package com.microservices.customer.repository.entity;
+package com.microservices.customer.entity;
 
 import lombok.Data;
 
