@@ -1,8 +1,24 @@
+# Application Configuration
+server:
+  port: 8091
+
+# Spring
 spring:
-  application:
-    name: product-service
-  cloud:
-    config:
-      uri: http://localhost:8081
-      username: root
-      password: s3cr3t
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/product-service?useUnicode=true&autoReconnect=true&useSSL=false&serverTimezone=UTC
+    username: root
+    password: 89631139
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+
+#spring:
+#  application:
+#    name: product-service
+#  cloud:
+#    config:
+#      uri: http://localhost:8081
+#      username: root
+#      password: s3cr3t
