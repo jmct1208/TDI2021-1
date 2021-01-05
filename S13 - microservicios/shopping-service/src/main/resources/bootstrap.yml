@@ -7,8 +7,8 @@ spring:
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/shopping-service?useUnicode=true&autoReconnect=true&useSSL=false&serverTimezone=UTC
-    username: root
-    password: 89631139
+    username: ${MYSQL_USER}
+    password: ${MYSQL_PASSWORD}
   jpa:
     hibernate.ddl-auto: update
     generate-ddl: true
