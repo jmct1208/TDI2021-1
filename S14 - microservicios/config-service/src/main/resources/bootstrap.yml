@@ -7,7 +7,7 @@ spring:
       server:
         git:
           uri: https://github.com/ivansaavedra/TDI2021-1.git
-          searchPaths: S13 - microservicios/config-data
+          searchPaths: S14 - microservicios/config-data
           username: ${GIT_USER}
           password: ${GIT_PASSWORD}
           default-label: "master"
