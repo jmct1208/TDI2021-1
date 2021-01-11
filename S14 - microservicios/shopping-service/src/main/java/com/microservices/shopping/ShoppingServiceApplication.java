@@ -7,10 +7,13 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 //import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
 //import org.springframework.cloud.openfeign.EnableFeignClients;
 
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+
 //@EnableDiscoveryClient
 //@EnableFeignClients
 //@EnableHystrix
 //@EnableHystrixDashboard
+@EnableEurekaClient
 @SpringBootApplication
 public class ShoppingServiceApplication {
 
