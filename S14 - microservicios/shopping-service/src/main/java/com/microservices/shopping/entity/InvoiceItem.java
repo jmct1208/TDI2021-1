@@ -6,6 +6,8 @@ import lombok.Data;
 import javax.persistence.*;
 import javax.validation.constraints.Positive;
 
+import com.microservices.shopping.model.Product;
+
 //import com.microservices.shopping.model.Product;
 
 import java.io.Serializable;
@@ -28,8 +30,8 @@ public class InvoiceItem  {
     @Transient
     private Double subTotal;
 
-//    @Transient
-//    private Product product;
+    @Transient
+    private Product product;
 
     public Double getSubTotal(){
         if (this.price >0  && this.quantity >0 ){

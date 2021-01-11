@@ -2,6 +2,7 @@ package com.microservices.shopping.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 //import com.microservices.shopping.model.Customer;
+import com.microservices.shopping.model.Customer;
 
 import lombok.Data;
 
@@ -43,8 +44,8 @@ public class Invoice {
 
     private String state;
 
-//    @Transient
-//    private Customer customer;
+    @Transient
+    private Customer customer;
 
     public Invoice(){
         items = new ArrayList<>();
